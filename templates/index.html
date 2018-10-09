@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <title>Fan Pages Photos</title>
+</head>
+<body>
+<h3 style="text-align:center">Facebook Download Images - Demo</h3>
+<div class="container">
+    <h6>FB Page link : <a href="https://www.facebook.com/ABC-Co-228455837861421/">Go to Page</a></h6>
+    <form action="/images" METHOD="post">
+        <div class="form-group">
+            <label class="sr-only" for="inlineFormInputURL">URL</label>
+            <input type="text" name="url" class="form-control " id="inlineFormInputURL" value="https://www.facebook.com/ABC-Co-228455837861421/">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </form>
+</div>
+</body>
+</html>

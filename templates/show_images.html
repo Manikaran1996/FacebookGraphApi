@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <title>Images</title>
+</head>
+<body>
+    <h3 style="text-align:center">Images</h3>
+    <br>
+    <div class="container">
+
+            {% for image in images if image.tags != None%}
+            {% if loop.index0 % 2 == 0%}
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+            {% endif %}
+
+             <div class="col-md-4">
+                    <div class="card">
+                          <img class="card-img-top" src="{{image.url}}" alt="Card image cap" height="256" width="256">
+                          <div class="card-body">
+                                <h5 class="card-title">Image {{loop.index}}</h5>
+                                  <p class="card-text"> <b>Tags</b> <br>
+                                  {% if image.tags != None %}
+                                    {% for tag in image.tags %}
+                                        {{tag.name}} <br>
+                                    {% endfor %}
+                                  {% else %}
+                                      None
+                                  {%endif%}
+                                  </p>
+                                <a href="{{image.link}}" class="btn btn-primary">Show on FB</a>
+                          </div>
+                    </div>
+             </div>
+                 {% if loop.index0 % 2 != 0%}
+            </div> <br>
+            {% endif %}
+            {% endfor %}
+
+    </div>
+</body>
+</html>
